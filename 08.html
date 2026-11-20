@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<title>Hospital Appointment</title>
+</head>
+<body>
+<h1>Hospital Appointment Booking</h1>
+<form action="#" method="post">
+  <label for="pn">Patient Name</label>
+  <input id="pn" name="pname" required>
+
+  <label for="age">Age</label>
+  <input id="age" type="number" min="0" max="120" name="age">
+
+  <label for="ph">Phone</label>
+  <input id="ph" type="tel" name="phone" required>
+
+  <label for="dp">Department</label>
+  <select id="dp" name="dept">
+    <option>Cardiology</option><option>Orthopedics</option><option>Pediatrics</option><option>General Medicine</option>
+  </select>
+
+  <label for="dr">Doctor</label>
+  <select id="dr" name="doctor">
+    <option>Dr. Mehta</option><option>Dr. Joshi</option><option>Dr. Rao</option>
+  </select>
+
+  <label for="ad">Appointment Date</label>
+  <input id="ad" type="date" name="adate" required>
+
+  <label for="sy">Symptoms</label>
+  <textarea id="sy" name="symptoms" rows="3"></textarea>
+
+  <label for="mh">Medical History</label>
+  <textarea id="mh" name="history" rows="3"></textarea>
+
+  <button type="submit">Book Appointment</button>
+</form>
+</body>
+</html>
