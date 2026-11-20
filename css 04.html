@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Travel Gallery</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:Segoe UI,Arial,sans-serif;background:#f1f5f9;padding:40px 20px}
+  h1{text-align:center;margin-bottom:30px;color:#0f172a}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;max-width:1100px;margin:auto}
+  .item{position:relative;overflow:hidden;border-radius:14px;height:240px}
+  .item.wide{grid-column:span 2}
+  .item img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .item:hover img{transform:scale(1.15)}
+  .overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;
+           color:#fff;background:linear-gradient(transparent 40%,rgba(0,0,0,.8));opacity:0;transition:opacity .4s}
+  .item:hover .overlay{opacity:1}
+  .overlay h3{transform:translateY(20px);transition:transform .4s}
+  .item:hover .overlay h3{transform:translateY(0)}
+  @media(max-width:600px){.item.wide{grid-column:span 1}}
+</style>
+</head>
+<body>
+  <h1>Explore Destinations</h1>
+  <div class="gallery">
+    <div class="item wide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-h5HIMKZdI7CUVCLQVjuE78WImvPnd8XeW71oPecgHA&s=10" alt=""><div class="overlay"><h3>Goa</h3><p>Sun, sand and beaches</p></div></div>
+    <div class="item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgzp8DJjqxdnMZ2Ttl1Ayoi-QRJFD8n150xbgTao-avQ&s=10" alt=""><div class="overlay"><h3>Jaipur</h3><p>The Pink City</p></div></div>
+    <div class="item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpzpn2BiODcxMUTgWpbg9HHXtK-l-yIM-hUA1Hu_dL2Q&s=10" alt=""><div class="overlay"><h3>Manali</h3><p>Snow and mountains</p></div></div>
+    <div class="item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqEII2TBFtt9Qdq3W2U6zghO8Ex9uMjwgkpcvBc6xBlg&s=10" alt=""><div class="overlay"><h3>Kerala</h3><p>Backwaters</p></div></div>
+    <div class="item wide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQac1JiUqp-Dhte7Y8R5EnXNPjtzyixg79BjT_8AIJvMA&s=10" alt=""><div class="overlay"><h3>Varanasi</h3><p>Spiritual capital</p></div></div>
+  </div>
+</body>
+</html>
