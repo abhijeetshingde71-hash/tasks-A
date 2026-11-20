@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login / Signup</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{min-height:100vh;display:flex;justify-content:center;align-items:center;
+       background:linear-gradient(135deg,#06b6d4,#8b5cf6,#ec4899);font-family:Segoe UI,Arial,sans-serif;padding:20px}
+  .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:center}
+  form{width:320px;background:rgba(255,255,255,.95);padding:32px 26px;border-radius:18px;box-shadow:0 15px 35px rgba(0,0,0,.25)}
+  h2{text-align:center;margin-bottom:20px;color:#1e293b}
+  input{width:100%;padding:12px 14px;margin-bottom:14px;border:2px solid #e2e8f0;border-radius:10px;
+        font-size:1rem;outline:none;transition:.3s}
+  input:focus{border-color:#8b5cf6;box-shadow:0 0 0 4px rgba(139,92,246,.2)}
+  input:valid:not(:placeholder-shown){border-color:#22c55e}
+  input:invalid:not(:placeholder-shown){border-color:#ef4444;background:#fef2f2}
+  button{width:100%;padding:12px;border:0;border-radius:10px;background:linear-gradient(90deg,#8b5cf6,#ec4899);
+         color:#fff;font-size:1rem;cursor:pointer;transition:.3s}
+  button:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(139,92,246,.4)}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <form>
+      <h2>Login</h2>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required minlength="6">
+      <button type="submit">Login</button>
+    </form>
+    <form>
+      <h2>Sign Up</h2>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password (min 6)" required minlength="6">
+      <button type="submit">Create Account</button>
+    </form>
+  </div>
+</body>
+</html>
