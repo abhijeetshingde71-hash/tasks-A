@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<title>Career Portal</title>
+</head>
+<body>
+<h1>Career Portal</h1>
+
+<div class="card">
+  <h2>About the Company</h2>
+  <p>TechNova Solutions is a Pune-based IT services company.</p>
+</div>
+
+<div class="card">
+  <h2>Junior Data Analyst</h2>
+  <p><b>Description:</b> Analyse data and build dashboards.</p>
+  <h3>Requirements</h3>
+  <ul>
+    <li>SQL and Excel</li>
+    <li>Power BI or Tableau</li>
+    <li>Graduate in IT / CS</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Junior QA Tester</h2>
+  <p><b>Description:</b> Test web applications and report bugs.</p>
+  <h3>Requirements</h3>
+  <ul>
+    <li>Basic testing knowledge</li>
+    <li>Attention to detail</li>
+  </ul>
+</div>
+
+<h2>Apply Now</h2>
+<form action="#" method="post">
+  <label for="fn">Full Name</label>
+  <input id="fn" name="name" required>
+
+  <label for="em">Email</label>
+  <input id="em" type="email" name="email" required>
+
+  <label for="jb">Position</label>
+  <select id="jb" name="job">
+    <option>Junior Data Analyst</option>
+    <option>Junior QA Tester</option>
+  </select>
+
+  <label for="rs">Upload Resume</label>
+  <input id="rs" type="file" name="resume" accept=".pdf,.doc,.docx" required>
+
+  <button type="submit">Submit Application</button>
+</form>
+</body>
+</html>
