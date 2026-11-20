@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Dashboard</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{display:flex;min-height:100vh;font-family:Segoe UI,Arial,sans-serif;background:#f1f5f9}
+  .sidebar{width:230px;background:#1e293b;color:#fff;padding:24px 16px;flex-shrink:0}
+  .sidebar h2{color:#38bdf8;margin-bottom:24px}
+  .sidebar a{display:block;padding:12px 14px;margin-bottom:6px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:.3s;cursor:pointer}
+  .sidebar a:hover,.sidebar a.active{background:#38bdf8;color:#0f172a}
+  .main{flex:1;padding:24px;min-width:0}
+  .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+
+  /* Pages */
+  .page{display:none}
+  .page.show{display:block;animation:fade .4s}
+  @keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+  .stats{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:24px}
+  .stat{flex:1;min-width:180px;background:#fff;padding:20px;border-radius:12px;border-left:6px solid var(--c);
+        box-shadow:0 3px 10px rgba(0,0,0,.06);transition:.3s}
+  .stat:hover{transform:translateY(-5px)}
+  .stat h3{font-size:1.8rem;margin-top:6px}
+  .stat p{color:#64748b}
+  .box{background:#fff;padding:20px;border-radius:12px;box-shadow:0 3px 10px rgba(0,0,0,.06);margin-bottom:20px}
+  .box h3{margin-bottom:12px}
+  .box li{list-style:none;padding:10px 0;border-bottom:1px solid #e2e8f0;color:#475569}
+  .box li:last-child{border:0}
+
+  table{width:100%;border-collapse:collapse}
+  th,td{padding:10px;text-align:left;border-bottom:1px solid #e2e8f0}
+  th{background:#f8fafc;color:#334155}
+  .tag{padding:3px 10px;border-radius:20px;font-size:12px;font-weight:600}
+  .green{background:#dcfce7;color:#166534}
+  .yellow{background:#fef3c7;color:#92400e}
+  .red{background:#fee2e2;color:#991b1b}
+  .table-wrap{overflow-x:auto}
+
+  .bar-row{margin-bottom:14px}
+  .bar-row span{display:block;margin-bottom:4px;color:#475569}
+  .bar{height:12px;background:#e2e8f0;border-radius:10px;overflow:hidden}
+  .bar div{height:100%;background:linear-gradient(90deg,#38bdf8,#8b5cf6);border-radius:10px}
+
+  .setting{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #e2e8f0}
+  .setting:last-child{border:0}
+  input[type=text],input[type=email]{padding:8px;border:1px solid #cbd5e1;border-radius:6px;width:220px;max-width:100%}
+  button.save{margin-top:14px;padding:10px 22px;border:0;border-radius:8px;background:#38bdf8;color:#0f172a;font-weight:600;cursor:pointer}
+  button.save:hover{background:#0ea5e9}
+
+  @media(max-width:700px){
+    body{flex-direction:column}
+    .sidebar{width:100%;display:flex;flex-wrap:wrap;gap:6px}
+    .sidebar h2{width:100%;margin-bottom:8px}
+    .sidebar a{margin:0}
+  }
+</style>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <h2>AdminPro</h2>
+    <a class="active" data-page="dashboard">Dashboard</a>
+    <a data-page="users">Users</a>
+    <a data-page="orders">Orders</a>
+    <a data-page="reports">Reports</a>
+    <a data-page="settings">Settings</a>
+  </aside>
+
+  <main class="main">
+    <div class="top"><h1 id="title">Dashboard</h1><span>Welcome, Admin</span></div>
+
+    <!-- Dashboard -->
+    <div class="page show" id="dashboard">
+      <div class="stats">
+        <div class="stat" style="--c:#38bdf8"><p>Total Users</p><h3>1,245</h3></div>
+        <div class="stat" style="--c:#22c55e"><p>Revenue</p><h3>₹84,500</h3></div>
+        <div class="stat" style="--c:#f59e0b"><p>Orders</p><h3>532</h3></div>
+        <div class="stat" style="--c:#ef4444"><p>Pending</p><h3>18</h3></div>
+      </div>
+      <div class="box">
+        <h3>Recent Activity</h3>
+        <ul>
+          <li>Rohan placed a new order</li>
+          <li>Sneha registered an account</li>
+          <li>Invoice #1042 was paid</li>
+          <li>Server backup completed</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Users -->
+    <div class="page" id="users">
+      <div class="box">
+        <h3>All Users</h3>
+        <div class="table-wrap">
+          <table>
+            <tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th></tr>
+            <tr><td>Rohan Patil</td><td>rohan@mail.com</td><td>Customer</td><td><span class="tag green">Active</span></td></tr>
+            <tr><td>Sneha Joshi</td><td>sneha@mail.com</td><td>Customer</td><td><span class="tag green">Active</span></td></tr>
+            <tr><td>Amit Shah</td><td>amit@mail.com</td><td>Manager</td><td><span class="tag yellow">Away</span></td></tr>
+            <tr><td>Priya Nair</td><td>priya@mail.com</td><td>Customer</td><td><span class="tag red">Blocked</span></td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Orders -->
+    <div class="page" id="orders">
+      <div class="box">
+        <h3>Recent Orders</h3>
+        <div class="table-wrap">
+          <table>
+            <tr><th>Order ID</th><th>Customer</th><th>Amount</th><th>Status</th></tr>
+            <tr><td>#1041</td><td>Rohan Patil</td><td>₹1,999</td><td><span class="tag green">Delivered</span></td></tr>
+            <tr><td>#1042</td><td>Sneha Joshi</td><td>₹3,499</td><td><span class="tag yellow">Shipped</span></td></tr>
+            <tr><td>#1043</td><td>Amit Shah</td><td>₹899</td><td><span class="tag yellow">Processing</span></td></tr>
+            <tr><td>#1044</td><td>Priya Nair</td><td>₹2,450</td><td><span class="tag red">Cancelled</span></td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reports -->
+    <div class="page" id="reports">
+      <div class="box">
+        <h3>Monthly Sales Report</h3>
+        <div class="bar-row"><span>January - 70%</span><div class="bar"><div style="width:70%"></div></div></div>
+        <div class="bar-row"><span>February - 55%</span><div class="bar"><div style="width:55%"></div></div></div>
+        <div class="bar-row"><span>March - 85%</span><div class="bar"><div style="width:85%"></div></div></div>
+        <div class="bar-row"><span>April - 62%</span><div class="bar"><div style="width:62%"></div></div></div>
+      </div>
+    </div>
+
+    <!-- Settings -->
+    <div class="page" id="settings">
+      <div class="box">
+        <h3>Account Settings</h3>
+        <div class="setting"><label>Admin Name</label><input type="text" value="Admin"></div>
+        <div class="setting"><label>Email</label><input type="email" value="admin@adminpro.com"></div>
+        <div class="setting"><label>Email Notifications</label><input type="checkbox" checked></div>
+        <div class="setting"><label>Dark Mode</label><input type="checkbox"></div>
+        <button class="save">Save Changes</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const links = document.querySelectorAll('.sidebar a');
+    const pages = document.querySelectorAll('.page');
+    const title = document.getElementById('title');
+
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        links.forEach(l => l.classList.remove('active'));
+        pages.forEach(p => p.classList.remove('show'));
+
+        link.classList.add('active');
+        document.getElementById(link.dataset.page).classList.add('show');
+        title.textContent = link.textContent;
+      });
+    });
+  </script>
+</body>
+</html>
