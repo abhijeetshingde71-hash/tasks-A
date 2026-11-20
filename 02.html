@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<title>College Fest Registration</title>
+</head>
+<body>
+<h1>College Fest Registration</h1>
+<form action="#" method="post">
+  <label for="n">Full Name</label>
+  <input id="n" name="name" required>
+
+  <label for="e">Email</label>
+  <input id="e" type="email" name="email" required>
+
+  <label for="p">Phone</label>
+  <input id="p" type="tel" name="phone" pattern="[0-9]{10}" required>
+
+  <div>
+    <label>Gender</label><br>
+    <input type="radio" name="g" value="Male" id="m"> <label for="m">Male</label>
+    <input type="radio" name="g" value="Female" id="f"> <label for="f">Female</label>
+    <input type="radio" name="g" value="Other" id="o"> <label for="o">Other</label>
+  </div>
+
+  <label for="c">Course</label>
+  <select id="c" name="course">
+    <option>BCA</option><option>BBA</option><option>BCom</option><option>BSc</option>
+  </select>
+
+  <label for="ev">Event</label>
+  <select id="ev" name="event">
+    <option>Coding Contest</option><option>Dance</option><option>Singing</option><option>Quiz</option>
+  </select>
+
+  <label for="d">Date</label>
+  <input id="d" type="date" name="date" required>
+
+  <button type="submit">Register</button>
+</form>
+</body>
+</html>
