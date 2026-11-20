@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StreamFlix</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#0b0b0f;color:#fff;font-family:Segoe UI,Arial,sans-serif}
+  header{display:flex;justify-content:space-between;align-items:center;padding:16px 40px;background:#000}
+  header .logo{color:#e50914;font-size:1.6rem;font-weight:800}
+  .banner{height:70vh;display:flex;flex-direction:column;justify-content:flex-end;padding:40px;
+          background:linear-gradient(to top,#0b0b0f 5%,transparent 70%),url(https://picsum.photos/seed/banner/1400/700) center/cover}
+  .banner h1{font-size:3rem;margin-bottom:8px}
+  .banner button{margin-top:16px;width:140px;padding:12px;border:0;border-radius:6px;background:#e50914;color:#fff;font-size:1rem;cursor:pointer;transition:.3s}
+  .banner button:hover{background:#b20710}
+  section{padding:24px 40px}
+  section h2{margin-bottom:14px}
+  .row{display:flex;gap:14px;overflow-x:auto;padding-bottom:10px}
+  .movie{position:relative;min-width:180px;height:260px;border-radius:10px;overflow:hidden;transition:transform .3s}
+  .movie:hover{transform:scale(1.08);z-index:2}
+  .movie img{width:100%;height:100%;object-fit:cover}
+  .movie .ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:12px;
+             background:linear-gradient(transparent,rgba(0,0,0,.9));opacity:0;transition:.3s}
+  .movie:hover .ov{opacity:1}
+  .ov small{color:#facc15}
+  @media(max-width:600px){.banner h1{font-size:2rem}section,header{padding:16px}}
+</style>
+</head>
+<body>
+  <header><div class="logo">STREAMFLIX</div><span>Sign In</span></header>
+  <div class="banner">
+    <h1>Midnight Chase</h1>
+    <p>A thrilling race against time. Now streaming.</p>
+    <button>▶ Play</button>
+  </div>
+  <section>
+    <h2>Trending Now</h2>
+    <div class="row">
+      <div class="movie"><img src="https://picsum.photos/seed/m1/360/520" alt=""><div class="ov"><b>Movie One</b><small>★ 4.5</small></div></div>
+      <div class="movie"><img src="https://picsum.photos/seed/m2/360/520" alt=""><div class="ov"><b>Movie Two</b><small>★ 4.2</small></div></div>
+      <div class="movie"><img src="https://picsum.photos/seed/m3/360/520" alt=""><div class="ov"><b>Movie Three</b><small>★ 4.8</small></div></div>
+      <div class="movie"><img src="https://picsum.photos/seed/m4/360/520" alt=""><div class="ov"><b>Movie Four</b><small>★ 4.0</small></div></div>
+      <div class="movie"><img src="https://picsum.photos/seed/m5/360/520" alt=""><div class="ov"><b>Movie Five</b><small>★ 4.6</small></div></div>
+    </div>
+  </section>
+  <section>
+    <h2>Action</h2>
+    <div class="row">
+      <div class="movie"><img src="https://picsum.photos/seed/m6/360/520" alt=""><div class="ov"><b>Action One</b><small>★ 4.1</small></div></div>
+      <div class="movie"><img src="https://picsum.photos/seed/m7/360/520" alt=""><div class="ov"><b>Action Two</b><small>★ 4.3</small></div></div>
+      <div class="movie"><img src="https://picsum.photos/seed/m8/360/520" alt=""><div class="ov"><b>Action Three</b><small>★ 3.9</small></div></div>
+      <div class="movie"><img src="https://picsum.photos/seed/m9/360/520" alt=""><div class="ov"><b>Action Four</b><small>★ 4.4</small></div></div>
+    </div>
+  </section>
+</body>
+</html>
