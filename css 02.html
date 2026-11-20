@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotel Yuvraj</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:Segoe UI,Arial,sans-serif;color:#222}
+  nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;
+      padding:16px 40px;background:#1c1917;color:#fff}
+  nav .logo{font-size:22px;font-weight:700;color:#f97316}
+  nav ul{display:flex;gap:24px;list-style:none}
+  nav a{color:#fff;text-decoration:none;transition:.3s}
+  nav a:hover{color:#f97316}
+  .hero{height:80vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+        color:#fff;background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyr8oUUuwSbAk0hDqlncYUPuV22q_gOgBH-JAqW9nCcw&s=10) center/cover}
+  .hero h1{font-size:3rem;margin-bottom:12px}
+  .hero a{margin-top:20px;padding:12px 28px;background:#f97316;color:#fff;border-radius:30px;text-decoration:none;transition:.3s}
+  .hero a:hover{background:#ea580c;transform:scale(1.05)}
+  section{padding:60px 40px;text-align:center}
+  section h2{margin-bottom:30px;font-size:2rem}
+
+  /* Category buttons */
+  .cats{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:36px}
+  .cat{padding:16px 32px;background:#fff7ed;border:2px solid transparent;border-radius:12px;
+       font-size:1rem;font-weight:600;cursor:pointer;transition:.3s}
+  .cat:hover{background:#fed7aa;transform:translateY(-4px)}
+  .cat.active{background:#f97316;color:#fff;border-color:#ea580c}
+
+  /* Food items */
+  .items{display:none;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;max-width:1000px;margin:auto}
+  .items.show{display:grid;animation:fade .5s}
+  @keyframes fade{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+  .item{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.1);transition:.3s}
+  .item:hover{transform:translateY(-8px);box-shadow:0 14px 26px rgba(0,0,0,.18)}
+  .item img{width:100%;height:170px;object-fit:cover}
+  .item .info{padding:14px}
+  .item h3{margin-bottom:6px}
+  .item .price{color:#ea580c;font-weight:700;font-size:1.1rem}
+
+  .offers{background:#fef3c7}
+  .offer-box{display:inline-block;background:#fff;padding:24px 40px;border:3px dashed #f97316;border-radius:14px}
+  .offer-box strong{color:#ea580c;font-size:1.8rem}
+  footer{background:#1c1917;color:#d6d3d1;text-align:center;padding:24px}
+  @media(max-width:600px){nav{flex-direction:column;gap:10px}.hero h1{font-size:2rem}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Hotel Yuvraj
+    </div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#offers">Offers</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>Taste the Tradition</h1>
+    <p>Fresh, spicy and made with love.</p>
+    <a href="#menu">View Menu</a>
+  </header>
+
+  <section id="menu">
+    <h2>Food Categories</h2>
+
+    <div class="cats">
+      <button class="cat active" data-target="starters">Starters</button>
+      <button class="cat" data-target="main">Main Course</button>
+      <button class="cat" data-target="desserts">Desserts</button>
+      <button class="cat" data-target="drinks">Drinks</button>
+    </div>
+
+    <!-- Starters -->
+    <div class="items show" id="starters">
+      <div class="item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOUn5NLUgNlc7Wv3Iyd277ggjMKYicuD-ZpZ2WKEgxFw&s=10" alt="Paneer Tikka">
+        <div class="info"><h3>Paneer Tikka</h3><div class="price">₹220</div></div></div>
+      <div class="item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8cQweH9wFYgo5ZfO_7FRXeZA5DWV_3xqpgH8bZ4ReTA&s=10" alt="Veg Spring Roll">
+        <div class="info"><h3>Veg Spring Roll</h3><div class="price">₹150</div></div></div>
+      <div class="item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9m-rFUZPx4OnROOIxI9qY10kQIM5Q09kZWtBE8PCg8w&s=10" alt="Hara Bhara Kebab">
+        <div class="info"><h3>Hara Bhara Kebab</h3><div class="price">₹180</div></div></div>
+    </div>
+
+    <!-- Main Course -->
+    <div class="items" id="main">
+      <div class="item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP3mgeFUXMHYVHzvCxLz2Bysg6mx13mpwhHrL59DIGoQ&s=10" alt="Butter Chicken">
+        <div class="info"><h3>Butter Chicken</h3><div class="price">₹320</div></div></div>
+      <div class="item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOD811O9iEhhhywVgi7rleJOi4JlLt0pf6HVa7Samq3Q&s=10" alt="Dal Tadka">
+        <div class="info"><h3>Dal Tadka</h3><div class="price">₹180</div></div></div>
+      <div class="item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY6m3XQt8c_HAXQ_J3diPf2j9W8VtUoR-_K6KSlzONIA&s=10" alt="Veg Biryani">
+        <div class="info"><h3>Veg Biryani</h3><div class="price">₹250</div></div></div>
+    </div>
+
+    <!-- Desserts -->
+    <div class="items" id="desserts">
+      <div class="item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf-o116M8OwMtV5PShx2jIbCFlhReDAUlwzWzNRiZTMw&s=10" alt="Gulab Jamun">
+        <div class="info"><h3>Gulab Jamun</h3><div class="price">₹90</div></div></div>
+      <div class="item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBCcPw0f9gTordb4EQYurqJV4ShXyIIKrpa1s_m6a8IQ&s=10" alt="Ice Cream">
+        <div class="info"><h3>Ice Cream</h3><div class="price">₹100</div></div></div>
+      <div class="item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuticQqxAB_7akLt8GRPXISTEFz1D8yjYvNnoR-3rJ-A&s=10" alt="Brownie">
+        <div class="info"><h3>Chocolate Brownie</h3><div class="price">₹130</div></div></div>
+    </div>
+
+    <!-- Drinks -->
+    <div class="items" id="drinks">
+      <div class="item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNpxM26wh4xQPUgIyoOWPnhGNxMsLtIuguAKT0WS8x4g&s=10" alt="Mango Lassi">
+        <div class="info"><h3>Mango Lassi</h3><div class="price">₹80</div></div></div>
+      <div class="item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRilp_EFLZ8A7H8TyNgeD_sZuUzPn6hxaHvxzWydwzUZA&s=10" alt="Cold Coffee">
+        <div class="info"><h3>Cold Coffee</h3><div class="price">₹110</div></div></div>
+      <div class="item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoEyrNI0Z6S0o35izA4jLRWsjcfXahrR1g7aB1OmpePA&s=10" alt="Fresh Lime Soda">
+        <div class="info"><h3>Fresh Lime Soda</h3><div class="price">₹60</div></div></div>
+    </div>
+  </section>
+
+  <section id="offers" class="offers">
+    <h2>Special Offers</h2>
+    <div class="offer-box"><strong>20% OFF</strong><br>on all combo meals this weekend</div>
+  </section>
+
+  <footer>&copy; 2026 Hotel Yuvraj. All rights reserved.</footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.cat');
+    const lists = document.querySelectorAll('.items');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        lists.forEach(l => l.classList.remove('show'));
+
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.target).classList.add('show');
+      });
+    });
+  </script>
+</body>
+</html>
