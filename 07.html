@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<title>Complaint Form</title>
+</head>
+<body>
+<h1>Online Complaint Registration</h1>
+<form action="#" method="post">
+  <label for="cat">Category</label>
+  <select id="cat" name="category">
+    <option>Service</option><option>Product</option><option>Billing</option><option>Other</option>
+  </select>
+
+  <div>
+    <label>Priority</label><br>
+    <input type="radio" name="pr" id="l" value="Low"><label for="l"> Low</label>
+    <input type="radio" name="pr" id="md" value="Medium" checked><label for="md"> Medium</label>
+    <input type="radio" name="pr" id="h" value="High"><label for="h"> High</label>
+  </div>
+
+  <label for="ds">Description</label>
+  <textarea id="ds" name="desc" rows="5" required></textarea>
+
+  <label for="at">Attachment</label>
+  <input id="at" type="file" name="file">
+
+  <label for="em">Email</label>
+  <input id="em" type="email" name="email" required>
+
+  <label for="ph">Phone</label>
+  <input id="ph" type="tel" name="phone" required>
+
+  <label for="rd">Preferred Resolution Date</label>
+  <input id="rd" type="date" name="resdate">
+
+  <button type="submit">Submit Complaint</button>
+</form>
+</body>
+</html>
