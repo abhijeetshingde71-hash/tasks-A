@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<title>Online Exam</title>
+</head>
+<body>
+<h1>Online Examination Portal</h1>
+
+<h2>Instructions</h2>
+<ol>
+  <li>Enter your details.</li>
+  <li>Answer all questions.</li>
+  <li>Click Submit once.</li>
+</ol>
+
+<form action="#" method="post">
+  <label for="sn">Student Name</label>
+  <input id="sn" name="sname" required>
+
+  <label for="rn">Roll Number</label>
+  <input id="rn" name="roll" required>
+
+  <div class="card">
+    <p><b>Q1. What does HTML stand for?</b></p>
+    <input type="radio" name="q1" id="a1"><label for="a1"> Hyper Text Markup Language</label><br>
+    <input type="radio" name="q1" id="a2"><label for="a2"> High Tech Modern Language</label><br>
+    <input type="radio" name="q1" id="a3"><label for="a3"> Home Tool Markup Language</label>
+  </div>
+
+  <div class="card">
+    <p><b>Q2. Which tag creates a hyperlink?</b></p>
+    <input type="radio" name="q2" id="b1"><label for="b1"> &lt;link&gt;</label><br>
+    <input type="radio" name="q2" id="b2"><label for="b2"> &lt;a&gt;</label><br>
+    <input type="radio" name="q2" id="b3"><label for="b3"> &lt;href&gt;</label>
+  </div>
+
+  <div class="card">
+    <p><b>Q3. Select all programming languages:</b></p>
+    <input type="checkbox" id="c1"><label for="c1"> Python</label><br>
+    <input type="checkbox" id="c2"><label for="c2"> HTML</label><br>
+    <input type="checkbox" id="c3"><label for="c3"> C++</label><br>
+    <input type="checkbox" id="c4"><label for="c4"> CSS</label>
+  </div>
+
+  <button type="submit">Submit Exam</button>
+</form>
+</body>
+</html>
